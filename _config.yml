@@ -1,0 +1,8 @@
+title: Node-cron
+description: A simple cron-like job scheduler for Node.js
+google_analytics: UA-40045005-2
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
