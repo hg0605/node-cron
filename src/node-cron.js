@@ -18,7 +18,7 @@ module.exports = (function() {
   function createTask(expression, func, immediateStart) {
     var task = new Task(expression, func);
 
-    return new ScheduledTask(task, immediateStart);
+    return new ScheduledTask(task, immediateStart,0);
   }
 
   function validate(expression) {

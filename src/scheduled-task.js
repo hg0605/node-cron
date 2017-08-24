@@ -8,9 +8,16 @@ module.exports = (function() {
    * @param {Task} task - task to schedule.
    * @param {boolean} immediateStart - whether to start the task immediately.
    */
-  function ScheduledTask(task, immediateStart) {
+  function ScheduledTask(task, immediateStart,offsetInHours) {
     this.task = function() {
-      task.update(new Date());
+
+      var now = new Date();
+var now_utc = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+var offset=offsetInHours*60;
+var dateWithOffset=new Date(now_utc*1 + (offset*60*1000));
+
+
+      task.update(dateWithOffset);
     };
 
     this.tick = null;
